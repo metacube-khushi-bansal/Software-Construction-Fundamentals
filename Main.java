@@ -89,6 +89,7 @@ public class Main {
 
                 case 5:
                     System.out.println("Total Bill: " + cart.displayBill());
+                    break;
 
                 default:
                     System.out.println("Enter valid menu option!");

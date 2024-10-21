@@ -16,7 +16,7 @@ public class ShoppingCart {
 
         } else if (cart.containsKey(item)) {
             System.out.println(item.getName() + " already present in the cart. Updating the quantity");
-            updateQty(item, quantity);
+            updateQty(item, cart.get(item) + quantity);  // check
 
         } else {
             cart.put(item, quantity);
@@ -36,11 +36,11 @@ public class ShoppingCart {
             return;
 
         }
-        if(!cart.containsKey(item)){
+        if (!cart.containsKey(item)) {
             System.out.println(item.getName() + " not present in the cart! Can't update");
-            return ;
+            return;
         }
-        cart.put(item, quantity);
+        cart.put(item, cart.get(item) + quantity);//check
         System.out.println(
                 "updated  item quantity of : " + item.getName() + " with the quantity: " + quantity + " to the cart");
 
@@ -52,7 +52,9 @@ public class ShoppingCart {
             System.out.println("Item doesnt exist in the cart");
             return;
         }
+        System.out.println(item.getName() + " deleted from the cart!");
         cart.remove(item);
+        
     }
 
     // Display cart total value (Total bill Amount)
